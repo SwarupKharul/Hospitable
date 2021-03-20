@@ -1,0 +1,120 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" href="{% static 'frontend/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Ubuntu:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Virtuable</title>
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-xl navbar-light bg-warning p-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'frontend/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
+                <span><strong>Virtuable 2.0</strong></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item {{ current }}">
+                        <a class="nav-link" href="{% url 'dumbmode' %}"><strong>dumb </strong></a>
+                    </li>
+                    <li class="nav-item {{ completed }}">
+                        <a class="nav-link" href="{% url 'deafmode' %}"><strong>deaf</strong></a>
+                    </li>
+                    <li class="nav-item {{ create }}">
+                        <a class="nav-link" href="{% url 'blindmode' %}"><strong>blind</strong></a>
+                    </li>
+
+                </ul>
+                {% endif %}
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            hello
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Change Password</a>
+                            <a class="dropdown-item" href="#" onclick="$('#signOutBtn').click()"
+                                class="nav-link">Logout</a>
+                            <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                                {% csrf_token %}
+                                <button id="signOutBtn" type="submit"><strong>Logout</strong></button>
+                            </form>
+                        </div>
+                    </div>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}"><strong>Sign Up</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'loginuser' %}"><strong>Login</strong></a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <div class=" container1">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        <div align="right">&copy; Codersdotpy</div>
+    </footer>
+
+    <style>
+        .navbar {
+            background-image: linear-gradient(to bottom, #ffffff, #f8f8f8);
+        }
+
+        .container1 {
+            max-width: 100%;
+            height: 600px;
+            background-image: linear-gradient(to bottom, #87ebff, #ffffff);
+        }
+    </style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

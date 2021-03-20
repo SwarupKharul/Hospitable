@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid align-center">
+    <img src="{% static 'frontend/assets/img/code-mic-150.png' %}" alt="Voice Note App Logo">
+    <h1>Voice Prescription</h1>
+    <hr>
+    <div class="app">
+        <div class="row">
+            <div class="col-md-6 align-center">
+                <h3>Add New Voice Note</h3>
+                <div class="input-single">
+                    <textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition."
+                        rows="6"></textarea>
+                </div>
+                <button id="start-record-btn" class="btn-success" title="Start Recording">Start Recognition</button>
+                <button id="pause-record-btn" class="btn-warning" title="Pause Recording">Pause Recognition</button>
+                <button id="save-note-btn" class="btn-info" title="Save Note">Save Note</button>
+                <p id="recording-instructions">Press the
+                    <strong>Start Recognition</strong> button and allow access.
+                </p>
+            </div>
+            <div class="col-md-6 align-center">
+                <h3>My Voice Notes</h3>
+                <ul id="notes">
+                    <li>
+                        <p class="no-notes">You don't have any notes.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="clearfix1">
+        <div class="container">
+            <div class="row">
+
+                <div class="center">
+                    <p>Speech to Text Voice Note App 2018</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'frontend/assets/js/script.js' %}"></script>
+
+{% endblock %}
