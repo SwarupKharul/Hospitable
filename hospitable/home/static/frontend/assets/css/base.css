@@ -1,0 +1,83 @@
+.whole{
+  display: flex;
+  background-image: url("home/static/frontend/assets/img/h1_hero.png");
+  background-size: cover;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.left{
+  flex:1;
+}
+
+.right{
+  flex:2;
+}
+.heading{
+color: rgb(55, 43, 226);
+font-size:500%;
+}
+
+.feat{
+  display:flex;
+}
+
+.logo{
+  align-content: center;
+}
+
+.deaf{
+  align-content: center;
+}
+/* linear-gradient(to bottom, #87ebff, #ffffff); */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  display:flex;
+  float: left;
+  width:25%;
+  padding: 0 10px;
+  justify-content: space-around;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+  display:flex;
+  justify-content: space-around;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #589dca;
+  color: aliceblue;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.fa{
+  size: 50%;
+}
