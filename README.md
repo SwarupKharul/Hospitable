@@ -1,5 +1,5 @@
 # Hospitable
-## Statistics: 
+## Statistics📈:
 - Over a 1 Billion people live with some form of disability.
 - 32% of adults with disability experience high/very high psychological distress.
 - Depression in persons with physical disabilities may be more common than in the general population.
@@ -21,6 +21,12 @@ We are planning to implement our project on website/app which will include all o
 - Django in backend for user authorization.
 
 ## Future Scope:construction::
+- can be extended from hospitals to offices and other external environments.
+- can be used for recognition of patterns according to user's medical record.
+
+## Business Model:
+We plan to use our product in collaboration with hospitals, clinics, and other institutions.
+
 ## Developed by:office_worker::
 - Swarup Kharul
 - Neel Ghoshal
