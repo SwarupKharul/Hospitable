@@ -32,3 +32,11 @@ We plan to use our product in collaboration with hospitals, clinics, and other i
 - Neel Ghoshal
 - Saniya Pandita
 - Ishita Chauhan
+
+## How to run
+- git clone https://github.com/SwarupKharul/Hospitable.git
+- cd Hospitable
+- pip install -r requirements.txt
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
