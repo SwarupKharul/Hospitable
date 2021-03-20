@@ -1,1 +1,29 @@
-record upload
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br><br><br>
+<center>
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Add Record Form</h3>
+
+        <label for="title">Title</label>
+        <input placeholder="Title" type="text" id="title" name="title" required autofocus />
+
+        <label for="upload">Select a file:</label>
+        <input type="file" id="upload" name="upload" /><br /><br />
+
+        <button name="submit" type="submit" data-submit="...Sending">
+            Submit
+        </button>
+
+
+    </form>
+</center>
+
+{% endblock %}

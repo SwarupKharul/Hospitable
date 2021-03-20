@@ -23,6 +23,16 @@ def video_feed(request):
 	return StreamingHttpResponse(gen(),
 					content_type='multipart/x-mixed-replace; boundary=frame')
 
+def features():
+    global camera
+    while True:
+        feature = camera.render_features()
+        yield (b'--frame\r\n'
+				b'Content-Type: image/jpeg\r\n\r\n' + feature + b'\r\n\r\n')
+
+def blind_feed(request):
+	return StreamingHttpResponse(features(),
+					content_type='multipart/x-mixed-replace; boundary=frame')
 
 def home(request):
     return render(request, 'home.html')
@@ -100,4 +110,4 @@ def uploadrecord(request):
 @login_required
 def listofrecords(request):
     record = Record.objects.filter(user=request.user).order_by('-created')
-    return render(request, 'recordlist.html', {'record':record})
+    return render(request, 'recordlist.html', {'records':record})

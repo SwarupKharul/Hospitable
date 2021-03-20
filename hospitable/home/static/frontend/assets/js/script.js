@@ -88,13 +88,11 @@ notesList.on('click', function (e) {
     e.preventDefault();
     var target = $(e.target);
 
-    // Listen to the selected note.
     if (target.hasClass('listen-note')) {
         var content = target.closest('.note').find('.content').text();
         readOutLoud(content);
     }
 
-    // Delete note.
     if (target.hasClass('delete-note')) {
         var dateTime = target.siblings('.date').text();
         deleteNote(dateTime);
@@ -106,7 +104,6 @@ notesList.on('click', function (e) {
 function readOutLoud(message) {
     var speech = new SpeechSynthesisUtterance();
 
-    // Set the text and voice attributes.
     speech.text = message;
     speech.volume = 1;
     speech.rate = 1;
@@ -115,11 +112,6 @@ function readOutLoud(message) {
     window.speechSynthesis.speak(speech);
 }
 
-
-
-/*-----------------------------
-      Helper Functions 
-------------------------------*/
 
 function renderNotes(notes) {
     var html = '';

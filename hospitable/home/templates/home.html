@@ -3,7 +3,13 @@
 {% block content %}
 
 <style>
+    .doctor {
+        transition: transform .9s;
+    }
 
+    .doctor:hover {
+        transform: scale(1.1);
+    }
 </style>
 
 
@@ -16,7 +22,7 @@
 <br>
 <div class="whole">
     <div class="left">
-        <h1 class="heading">We Care</h1><br>
+        <h3 class="heading">We Care about</h3><span class="typed"></span><br>
         <h4>We are aiming to solve the problems faced by people with disabilities who
             require continuous assistance. We aim to make them self dependent in external
             environment. Also every disabled person isn't of means and not everyone can afford
@@ -25,7 +31,7 @@
     </div>
 
     <div class="right">
-        <img src="{% static 'frontend/assets/img/doctor1.png' %}" alt="">
+        <img class="doctor" src="{% static 'frontend/assets/img/doctor1.png' %}" alt="">
     </div>
 </div>
 <br>
@@ -40,29 +46,32 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-1">
-                    <h3>Ionic Native</h3>
-                    <p>A curated set of ES5/ES6/TypeScript wrappers for plugins to easily add any native functionality
-                        to
-                        .</p>
+                    <h3>Visually Impaired</h3>
+                    <p>Helping them in navigating around the required area.
+                    </p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card card-2">
-                    <h3>UI Components</h3>
-                    <p>Tabs, buttons, inputs, lists, cards, and more! A comprehensive library
-                        of mobile UI components, ready to go.</p>
+                    <h3>Auditory Disability</h3>
+                    <p>Helping them to communicate by converting the other person's speech to text.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card card-3">
-                    <h3>Theming</h3>
-                    <p>Learn how to easily customize and modify your app’s design to fit your
-                        brand across all mobile platform styles.</p>
+                    <h3>Vocal Disability</h3>
+                    <p>Helping them to communicate by converting their sign language into text.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br><br>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script>
+    var options = { strings: ["Visually Impaired", "Vocally Disabled", "Auditorily Disabled"], typeSpeed: 100, loop: true, smartBackspace: false, showCursor: true, cursorChar: "_", backSpeed: 40, backDelay: 2000 };
+    var typed = new Typed(".typed", options);
+</script>
+
 
 {% endblock %}
