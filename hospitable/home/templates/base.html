@@ -23,14 +23,22 @@
 
 </head>
 
+<style>
+    .container1 {
+        max-width: 100%;
+        height: 600px;
+        background-image: linear-gradient(to bottom, #79ffff, #ffffff);
+    }
+</style>
+
 <body>
 
 
-    <nav class="navbar navbar-expand-xl navbar-light bg-warning p-2">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-primary p-2">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="{% static 'frontend/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
-                <span><strong>Virtuable 2.0</strong></span>
+                <span><strong>Hospitable</strong></span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,26 +91,14 @@
         </div>
 
     </nav>
-    <div class=" container1">
+    <div class="container1">
         <div class="container">
             {% block content %}{% endblock %}
         </div>
     </div>
-    <footer>
-        <div align="right">&copy; Codersdotpy</div>
-    </footer>
 
-    <style>
-        .navbar {
-            background-image: linear-gradient(to bottom, #ffffff, #f8f8f8);
-        }
 
-        .container1 {
-            max-width: 100%;
-            height: 600px;
-            background-image: linear-gradient(to bottom, #87ebff, #ffffff);
-        }
-    </style>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
