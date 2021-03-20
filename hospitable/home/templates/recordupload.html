@@ -8,22 +8,28 @@
         {{ error }}
     </div>
     {% endif %}
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h3>Add Record Form</h3>
+    <div class="card" style="width: 30rem;">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3>Add Record Form</h3>
+            <br>
+            <center>
+                <div style="width: 18rem;">
+                    <label for="title">Title :</label>
+                    <input placeholder="Title" type="text" id="title" name="title" required autofocus />
+                    <br><br>
+                    <label for="upload">Upload the document</label>
+                    <input type="file" id="upload" name="upload" />
+                    <br><br>
+                </div>
+            </center>
+            <button class="btn btn-primary" name="submit" type="submit" data-submit="...Sending">
+                Submit
+            </button>
 
-        <label for="title">Title</label>
-        <input placeholder="Title" type="text" id="title" name="title" required autofocus />
 
-        <label for="upload">Select a file:</label>
-        <input type="file" id="upload" name="upload" /><br /><br />
-
-        <button name="submit" type="submit" data-submit="...Sending">
-            Submit
-        </button>
-
-
-    </form>
+        </form>
+    </div>
 </center>
 
 {% endblock %}

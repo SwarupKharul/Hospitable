@@ -10,6 +10,10 @@
     .doctor:hover {
         transform: scale(1.1);
     }
+
+    .card {
+        background-color: rgb(202, 231, 255);
+    }
 </style>
 
 
@@ -44,21 +48,26 @@
 
     <div class="container text-dark">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 p-2">
                 <div class="card card-1">
+                    <center><img src="{% static 'frontend/assets/img/blindeye.png' %}" height="100" width="100">
+                    </center>
                     <h3>Visually Impaired</h3>
                     <p>Helping them in navigating around the required area.
                     </p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 p-2">
                 <div class="card card-2">
+                    <center><img src="{% static 'frontend/assets/img/deaf.png' %}" height="100" width="100"></center>
                     <h3>Auditory Disability</h3>
                     <p>Helping them to communicate by converting the other person's speech to text.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 p-2">
                 <div class="card card-3">
+                    <center><img src="{% static 'frontend/assets/img/signlanguage.png' %}" height="100" width="100">
+                    </center>
                     <h3>Vocal Disability</h3>
                     <p>Helping them to communicate by converting their sign language into text.</p>
                 </div>

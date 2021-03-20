@@ -35,37 +35,21 @@
         font-size: 150%;
     }
 
-    #background {
-        position: absolute;
-        width: 100vw;
-        height: 200vh;
-        z-index: 0;
-    }
-
     #container-main {
         position: relative;
     }
 
-    #background canvas {
-
-        height: 200vh;
-    }
-
-    #navbar canvas {
-        height: 90px !important;
-    }
-
     #navbar {
-        background-color: #00f3 !important;
+        background-color: rgb(25, 25, 117) !important;
     }
 </style>
 
 <body>
     <div id="background"></div>
     <div id="container-main">
-        <nav class="navbar navbar-expand-xl navbar-dark bg-transparent p-2" id="navbar">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-primary p-2" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'home' %}">
                     <img src="{% static 'frontend/logo.jpg' %}" width="55" height="50" class="d-inline-block align-top">
                     <span>
                         <h1 style="float: right;"> &nbsp; Hospitable &nbsp;</h1>
