@@ -34,6 +34,7 @@ We plan to use our product in collaboration with hospitals, clinics, and other i
 - Ishita Chauhan
 
 ![image](https://user-images.githubusercontent.com/65753949/111891825-ce9bd000-8a1b-11eb-909f-745dfa19c4a4.png)
+![image](https://user-images.githubusercontent.com/65753949/111892068-e411f980-8a1d-11eb-9561-15fe74619701.png)
 ![image](https://user-images.githubusercontent.com/65753949/111891771-5503e200-8a1b-11eb-8806-70107afdf604.png)
 ![image](https://user-images.githubusercontent.com/65753949/111891780-74027400-8a1b-11eb-823f-481c636b0f0c.png)
 ![image](https://user-images.githubusercontent.com/65753949/111891790-8aa8cb00-8a1b-11eb-883e-faea5b200088.png)
