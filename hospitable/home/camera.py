@@ -5,8 +5,7 @@ import numpy as np
 import math
 from django.conf import settings
 import pytesseract
-from PIL import Image
-from PIL import ImageFilter
+
 
 face_detection_videocam = cv2.CascadeClassifier(os.path.join(
 			settings.BASE_DIR,'opencv_haarcascade_data/haarcascade_frontalface_default.xml'))
@@ -135,8 +134,6 @@ class VideoCamera(object):
 			elif not hand_detected==():
 				cv2.putText(frame_flip,'Hello',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
 
-			
-
 		except:
 			pass
 			
@@ -145,27 +142,12 @@ class VideoCamera(object):
 
 	def render_features(self):
 
-		success, cap = self.video.read()
-		gray = cv2.cvtColor(cap, cv2.COLOR_BGR2GRAY)
-		frame_flip = cv2.flip(cap,1)
-
-		font_scale=1.5
-		font=cv2.FONT_HERSHEY_PLAIN
-		ret, frame=cap.read()
-		
-		imgH,imgW,=frame.shape
-		x1,y1,w1,h1=0,0,imgH,imgW
-		imgchar=pytesseract.image_to_string(frame)
-		imgboxes=pytesseract.image_to_boxes(frame)
-		for boxes in imgboxes.splitlines():
-					boxes=boxes.split(' ')
-					x,y,w,h=int(boxes[1]),int(boxes[2]),int(boxes[3]),int(boxes[4])
-					cv2.rectangle(frame,(x,imgH-y),(w,imgH-h),(0,0,255),3)
-		cv2.putText(frame,imgchar,(x1+int(w1/50),y1+int(h1/50)),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
-		font=cv2.FONT_HERHEY_SIMPLEX
-
-		cv2.imshow('Text detection',frame)
-
+		success, image = self.video.read()
+		gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		faces_detected = face_detection_videocam.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=5)
+		for (x, y, w, h) in faces_detected:
+			cv2.rectangle(image, pt1=(x, y), pt2=(x + w, y + h), color=(255, 0, 0), thickness=2)
+		frame_flip = cv2.flip(image,1)
 
 		ret, jpeg = cv2.imencode('.jpg', frame_flip)
 		return jpeg.tobytes()
