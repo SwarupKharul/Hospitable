@@ -28,10 +28,10 @@ We are planning to implement our project on website/app which will include all o
 We plan to use our product in collaboration with hospitals, clinics, and other institutions.
 
 ## Developed by:office_worker::
-- Swarup Kharul
+- [Swarup Kharul](https://github.com/SwarupKharul)
 - [Neel Ghoshal](https://github.com/NeelGhoshal)
-- Saniya Pandita
-- Ishita Chauhan
+- [Saniya Pandita](https://github.com/Saby-Bishops)
+- [Ishita Chauhan](https://github.com/ishizzz)
 
 ![image](https://user-images.githubusercontent.com/65753949/111891825-ce9bd000-8a1b-11eb-909f-745dfa19c4a4.png)
 ![image](https://user-images.githubusercontent.com/65753949/111892068-e411f980-8a1d-11eb-9561-15fe74619701.png)
