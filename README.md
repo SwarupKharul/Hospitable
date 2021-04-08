@@ -29,7 +29,7 @@ We plan to use our product in collaboration with hospitals, clinics, and other i
 
 ## Developed by:office_worker::
 - Swarup Kharul
-- Neel Ghoshal
+- [Neel Ghoshal](https://github.com/NeelGhoshal)
 - Saniya Pandita
 - Ishita Chauhan
 
