@@ -27,6 +27,14 @@ We are planning to implement our project on website/app which will include all o
 ## Business Model:
 We plan to use our product in collaboration with hospitals, clinics, and other institutions.
 
+## How to run this
+```
+git clone https://github.com/SwarupKharul/Hospitable.git
+cd Virtuable
+pip install -r requirements.txt
+python manage.py runserver
+```
+
 ## Developed by:office_worker::
 - [Swarup Kharul](https://github.com/SwarupKharul)
 - [Neel Ghoshal](https://github.com/NeelGhoshal)
