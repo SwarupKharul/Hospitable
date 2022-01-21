@@ -30,7 +30,7 @@ We plan to use our product in collaboration with hospitals, clinics, and other i
 ## How to run this
 ```
 git clone https://github.com/SwarupKharul/Hospitable.git
-cd Virtuable
+cd Hospitable
 pip install -r requirements.txt
 python manage.py runserver
 ```
